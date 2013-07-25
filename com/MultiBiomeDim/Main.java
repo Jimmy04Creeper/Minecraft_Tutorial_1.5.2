@@ -15,6 +15,7 @@ import com.MultiBiomeDim.blocks.BlockTutorialLeaf1;
 import com.MultiBiomeDim.blocks.BlockTutorialLog1;
 import com.MultiBiomeDim.blocks.BlockTutorialPortal1;
 import com.MultiBiomeDim.blocks.BlockTutorialSapling1;
+import com.MultiBiomeDim.events.TutorialEventClass1;
 import com.MultiBiomeDim.items.ItemPortalPlacer1;
 import com.MultiBiomeDim.items.ItemTutorialFlintAndSteel1;
 import com.MultiBiomeDim.lib.BiomeIDsMulti;
@@ -23,7 +24,12 @@ import com.MultiBiomeDim.lib.DimensionIDsMulti;
 import com.MultiBiomeDim.lib.ItemIDsMulti;
 import com.MultiBiomeDim.lib.NamesMulti;
 import com.MultiBiomeDim.lib.ReferenceMulti;
-import com.MultiBiomeDim.world.WorldProviderTutorial1;
+import com.MultiBiomeDim.world.WorldProviderTutorialTest;
+import com.MultiBiomeDim.world.biomes.BiomeGenTutorial2;
+import com.MultiBiomeDim.world.biomes.BiomeGenTutorial3;
+import com.MultiBiomeDim.world.biomes.BiomeGenTutorial4;
+import com.MultiBiomeDim.world.gen.WorldGenTutorialForestTree1;
+import com.MultiBiomeDim.world.gen.WorldGenTutorialTree1;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -58,6 +64,9 @@ public class Main
 	
 	/** Biome's **/
 	public static final BiomeGenBase TutorialBiome1 = new BiomeGenTutorial1(BiomeIDsMulti.BiomeID_1);
+	public static final BiomeGenBase TutorialBiome2 = new BiomeGenTutorial2(BiomeIDsMulti.BiomeID_2);
+	public static final BiomeGenBase TutorialBiome3 = new BiomeGenTutorial3(BiomeIDsMulti.BiomeID_3);
+	public static final BiomeGenBase TutorialBiome4 = new BiomeGenTutorial4(BiomeIDsMulti.BiomeID_3);
 	
 	@EventHandler
 	public static void preInit(FMLPreInitializationEvent event)
@@ -94,12 +103,15 @@ public class Main
 		LanguageRegistry.addName(TutorialLog1, NamesMulti.TutorialLog);
 		LanguageRegistry.addName(TutorialSapling1, NamesMulti.TutorialSapling);
 		
+		/** adds trees to dimension **/
+		GameRegistry.registerWorldGenerator(new WorldGenTutorialTree1(false));
+		
 		/**Register WorldProvider for Dimension **/
-		DimensionManager.registerProviderType(DimID, WorldProviderTutorial1.class, true);
+		DimensionManager.registerProviderType(DimID, WorldProviderTutorialTest.class, true);
 		DimensionManager.registerDimension(DimID, DimID);
 		
 		/** Event's **/
-		//MinecraftForge.EVENT_BUS.register(new TutorialEventClass1());
+		MinecraftForge.EVENT_BUS.register(new TutorialEventClass1());
 	}
 	
 	@EventHandler

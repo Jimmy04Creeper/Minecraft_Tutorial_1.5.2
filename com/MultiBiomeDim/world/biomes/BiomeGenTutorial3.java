@@ -1,16 +1,17 @@
-package com.BasicDimension.world.biomes;
+package com.MultiBiomeDim.world.biomes;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
 import com.BasicDimension.Main;
 
-public class BiomeGenTutorial1 extends BiomeGenBase
+public class BiomeGenTutorial3 extends BiomeGenBase
 {
-	private WorldGenerator UnDeadworldGeneratorBigTree;
 	public final Material blockMaterial;
-	public BiomeGenTutorial1(int par1)
+	
+	public BiomeGenTutorial3(int par1)
 	{
 		super(par1);
 		this.blockMaterial = Material.water;
@@ -18,9 +19,9 @@ public class BiomeGenTutorial1 extends BiomeGenBase
 		this.maxHeight = 0.6F;
 		this.spawnableMonsterList.clear();
 		this.spawnableCreatureList.clear();
-		this.topBlock = ((byte)Main.TutorialGrass.blockID);
-		this.fillerBlock = ((byte)Main.TutorialDirt.blockID);
-		this.setBiomeName("Tutorial 1");
+		this.topBlock = ((byte)Block.oreCoal.blockID);
+		this.fillerBlock = ((byte)Block.blockClay.blockID);
+		this.setBiomeName("Tutorial 3");
 
 		/** this changes the water colour, its set to red now but ggole the java colours **/
 		this.waterColorMultiplier = 0xE42D17;
