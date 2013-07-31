@@ -4,10 +4,10 @@ import java.util.List;
 import java.util.Random;
 
 import com.BasicDimension.Main;
+import com.BasicDimension.world.gen.MapGenTutorialCaves;
 import com.BasicDimension.world.gen.WorldGenTutorialForestTree;
 import com.BasicDimension.world.gen.WorldGenTutorialHugeTree;
 import com.BasicDimension.world.gen.WorldGenTutorialTree;
-import com.MultiBiomeDim.world.gen.MapGenTutorialCaves;
 
 import net.minecraft.block.Block;
 import net.minecraft.entity.EnumCreatureType;

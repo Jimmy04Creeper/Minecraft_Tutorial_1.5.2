@@ -1,4 +1,4 @@
-package com.MultiBiomeDim.world.gen;
+package com.BasicDimension.world.gen;
 
 import java.util.Random;
 
@@ -246,7 +246,7 @@ public class MapGenTutorialCaves extends MapGenBase
 
     protected boolean isOceanBlock(byte[] data, int index, int x, int y, int z, int chunkX, int chunkZ)
     {
-        return data[index] == Block.waterMoving.blockID || data[index] == Block.waterStill.blockID;
+        return data[index] == Block.waterMoving.blockID || data[index] == Block.waterStill.blockID;//LEAVE THIS BLOCK !!!!!!
     }
 
     //Exception biomes to make sure we generate like vanilla
