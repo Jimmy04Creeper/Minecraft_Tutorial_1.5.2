@@ -7,6 +7,7 @@ import com.BasicDimension.Main;
 import com.BasicDimension.world.gen.WorldGenTutorialForestTree;
 import com.BasicDimension.world.gen.WorldGenTutorialHugeTree;
 import com.BasicDimension.world.gen.WorldGenTutorialTree;
+import com.MultiBiomeDim.world.gen.MapGenTutorialCaves;
 
 import net.minecraft.block.Block;
 import net.minecraft.entity.EnumCreatureType;
@@ -43,7 +44,7 @@ public class ChunkProviderTutorial implements IChunkProvider
 	private final boolean mapFeaturesEnabled;
 	private double[] noiseArray;
 	private double[] stoneNoise = new double[256];
-	private MapGenBase caveGenerator = new MapGenCaves();
+	private MapGenBase caveGenerator = new MapGenTutorialCaves();
 	private MapGenStronghold strongholdGenerator = new MapGenStronghold();
 	private MapGenVillage villageGenerator = new MapGenVillage();
 	private MapGenMineshaft mineshaftGenerator = new MapGenMineshaft();

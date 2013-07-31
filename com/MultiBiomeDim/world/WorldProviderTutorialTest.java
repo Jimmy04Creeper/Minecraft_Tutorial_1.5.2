@@ -9,13 +9,14 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldProvider;
 import net.minecraft.world.WorldProviderHell;
 import net.minecraft.world.chunk.IChunkProvider;
+import net.minecraftforge.client.IRenderHandler;
 import net.minecraftforge.common.DimensionManager;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class WorldProviderTutorialTest extends WorldProvider
-{
+{	
 	public void registerWorldChunkManager()
 	{
 		/** tells Minecraft to use our new WorldChunkManager **/
