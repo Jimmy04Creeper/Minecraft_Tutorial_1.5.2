@@ -18,6 +18,7 @@ import com.BasicDimension.lib.Names;
 import com.BasicDimension.lib.Reference;
 import com.BasicDimension.world.WorldProviderTutorial;
 import com.BasicDimension.world.biomes.BiomeGenTutorial1;
+import com.BasicDimension.world.gen.WorldGenModOre;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -102,6 +103,9 @@ public class Main
 		
 		/** Event's **/
 		MinecraftForge.EVENT_BUS.register(new TutorialEventClass());
+		
+		/** Ore Generator **/
+		GameRegistry.registerWorldGenerator(new WorldGenModOre());
 	}
 	
 	@EventHandler
